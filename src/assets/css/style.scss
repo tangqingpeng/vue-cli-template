@@ -1,0 +1,48 @@
+@use 'sass:math';
+@import './reset';
+@import './normalize';
+// 以 Iphone 6、6s、7、8 为设计基础。750px
+// 定义预计根元素 fontSize。
+//$rootFontSize: 375 / 10;
+$rootFontSize: math.div(375, 10);
+// 定义像素转化为 rem 函数
+//@function px2rem ($px) {
+//  @return  calc($px / 2 / $rootFontSize)+rem;
+//}
+@function px2rem ($px) {
+  @return calc(math.div(math.div($px, 2), $rootFontSize)) + rem;
+}
+
+
+$mainColor: #d81e06;
+$bgColor: #EEEEEE;
+$lineColor: #e5e5e5;
+$textHintColor: #999999;
+$textColor: #333333;
+
+$infoSize: px2rem(14);
+$titleSize: px2rem(16);
+$minInfoSize: px2rem(12);
+$marginSize: px2rem(8);
+$navBarHeight: px2rem(44);
+$radiusSize: px2rem(6);
+$goodsOptionsHeight: px2rem(46);
+$checkSize: px2rem(18);
+// 手机中 stateBar 高度
+$stateBarHeight: px2rem(22);
+// IphoneX 底部操作位置高度
+$iphoneXBottomHeight: px2rem(34);
+
+
+
+@mixin center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin centerV() {
+  display: flex;
+  flex-direction: column;;
+  align-items: center;
+  justify-content: center;
+}
