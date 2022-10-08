@@ -5,7 +5,7 @@ import store from './store'
 import { registerComponents } from './components'
 import { wavesDirective } from './directive'
 import './icons'
-import './assets/css/global.scss'
+// import './assets/css/global.scss'
 
 const app = createApp(App);
 registerComponents(app)

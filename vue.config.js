@@ -1,4 +1,4 @@
-const { defineConfig } = require('@vue/cli-service')
+const {defineConfig} = require('@vue/cli-service')
 // const CompressionWebpackPlugin = require('compression-webpack-plugin')
 // const AliOssPlugin = require('webpack-oss')
 
@@ -26,22 +26,21 @@ module.exports = defineConfig({
     port: 8080
   },
 
-  // css: {
-  //   // 是否使用css分离插件 ExtractTextPlugin
-  //   extract: true,
-  //   // 开启 CSS source maps?
-  //   sourceMap: false,
-  //   // css预设器配置项
-  //   // loaderOptions: {
-  //   // pass options to sass-loader
-  //   // sass: {
-  //   //   // 引入全局变量样式
-  //   //   data: `
-  //   //     @import "@/stylePath/theme.scss;
-  //   //   `
-  //   // }
-  //   // },
-  // },
+  css: {
+    // 是否使用css分离插件 ExtractTextPlugin
+    extract: true,
+    // 开启 CSS source maps?
+    sourceMap: false,
+    // css预设器配置项
+    loaderOptions: {
+      sass: {
+        // 引入全局变量样式
+        additionalData: `
+          @import "~@/assets/css/global.scss";
+        `
+      }
+    },
+  },
 
   configureWebpack: config => {
     // config.externals = {

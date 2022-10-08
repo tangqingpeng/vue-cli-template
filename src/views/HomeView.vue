@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home app-container">
     <div class="test" v-waves>test</div>
     <svg-icon icon-class="loading"/>
   </div>
